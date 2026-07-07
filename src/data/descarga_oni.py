@@ -2,7 +2,8 @@ import pandas as pd
 import os
 
 URL_ONI = 'https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt'
-RUTA_SALIDA = r'C:\proyectos\tesis-bolsa\data\raw\oni.parquet'
+from pathlib import Path
+RUTA_SALIDA = Path(__file__).resolve().parents[2] / 'data' / 'raw' / 'oni.parquet'
 
 # Mes central de cada trimestre móvil
 MES_CENTRAL = {

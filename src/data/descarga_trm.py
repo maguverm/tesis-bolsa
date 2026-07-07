@@ -3,7 +3,8 @@ import pandas as pd
 import os
 
 URL = 'https://www.datos.gov.co/resource/mcec-87by.json?$limit=10000&$where=vigenciadesde>="2013-01-01T00:00:00.000"'
-RUTA_SALIDA = r'C:\proyectos\tesis-bolsa\data\raw\trm.parquet'
+from pathlib import Path
+RUTA_SALIDA = Path(__file__).resolve().parents[2] / 'data' / 'raw' / 'trm.parquet'
 
 def descargar_trm():
     print("Descargando TRM desde datos.gov.co...")

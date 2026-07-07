@@ -4,6 +4,9 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parents[2] / 'data' / 'raw'
 
 MAX_WORKERS = 4
 MESES_POR_BLOQUE = 1
@@ -14,7 +17,7 @@ DATASETS = {
         'fecha_inicio': '2013-01-01',
         'col_fecha': 'Fecha',
         'tiene_versiones': False,
-        'archivo': r'C:\proyectos\tesis-bolsa\data\raw\precio_escasez.parquet'
+        'archivo': BASE / 'precio_escasez.parquet'
     }
 }
 

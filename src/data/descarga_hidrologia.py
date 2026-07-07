@@ -4,6 +4,9 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parents[2] / 'data' / 'raw'
 
 # Parámetros generales
 MAX_WORKERS = 4
@@ -18,21 +21,21 @@ DATASETS = {
         'fecha_inicio': '2013-01-01',
         'col_fecha': 'Fecha',
         'tiene_versiones': False,
-        'archivo': 'data/raw/aportes_energia.parquet'
+        'archivo': BASE / 'aportes_energia.parquet'
     },
     'vertimientos': {
         'id': 'AECA28',
         'fecha_inicio': '2013-01-01',
         'col_fecha': 'Fecha',
         'tiene_versiones': False,
-        'archivo': 'data/raw/vertimientos.parquet'
+        'archivo': BASE / 'vertimientos.parquet'
     },
     'nivel_embalse': {
         'id': 'BD26DC',
         'fecha_inicio': '2021-01-01',
         'col_fecha': 'FechaInicio',
         'tiene_versiones': True,
-        'archivo': 'data/raw/nivel_embalse.parquet'
+        'archivo': BASE / 'nivel_embalse.parquet'
     }
 }
 

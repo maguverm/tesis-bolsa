@@ -4,6 +4,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
+from pathlib import Path
 
 # Parámetros de descarga
 DATASET_ID = '96D56E'
@@ -17,7 +18,7 @@ MAX_WORKERS = 4
 ORDEN_VERSIONES = ['TXF', 'TX6', 'TX5', 'TX4', 'TX3', 'TX2', 'TX1', 'TXR']
 
 # Ruta de salida
-RUTA_SALIDA = os.path.join('data', 'raw', 'precio_bolsa.parquet')
+RUTA_SALIDA = Path(__file__).resolve().parents[2] / 'data' / 'raw' / 'precio_bolsa.parquet'
 
 
 def generar_bloques(fecha_inicio, fecha_fin, meses):
