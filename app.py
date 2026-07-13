@@ -14,6 +14,8 @@ BASE = Path(__file__).resolve().parent / 'data' / 'processed'
 @st.cache_data
 def cargar_datos():
     df = pd.read_parquet(BASE / 'dataset_consolidado.parquet')
+    if 'Fecha' in df.columns:
+        df = df.set_index('Fecha')
     df.index = pd.to_datetime(df.index)
     df.index.name = 'Fecha'
     return df
