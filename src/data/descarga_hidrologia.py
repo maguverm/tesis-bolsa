@@ -76,33 +76,44 @@ def descargar_dataset(nombre, config):
     bloques = generar_bloques(config['fecha_inicio'], fecha_fin, MESES_POR_BLOQUE)
     print(f"Total de bloques: {len(bloques)}")
 
+    archivo = config['archivo']
+    os.makedirs(os.path.dirname(archivo), exist_ok=True)
+
+    if os.path.exists(archivo):
+        df_existente = pd.read_parquet(archivo)
+        ultima_fecha = pd.to_datetime(df_existente['Fecha']).max()
+        bloques = [(ini, fin) for ini, fin in bloques if datetime.strptime(fin, '%Y-%m-%d') > ultima_fecha]
+        print(f"Reanudando desde {ultima_fecha.date()} — bloques pendientes: {len(bloques)}")
+
     args = [(config['id'], inicio, fin) for inicio, fin in bloques]
 
-    resultados = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futuros = {executor.submit(descargar_bloque, arg): arg for arg in args}
         for i, futuro in enumerate(as_completed(futuros), 1):
             df_bloque = futuro.result()
             if not df_bloque.empty:
-                resultados.append(df_bloque)
-            print(f"  Bloque {i}/{len(bloques)} completado")
+                if config['tiene_versiones']:
+                    df_bloque = mejor_version(df_bloque, config['col_fecha'])
+                if config['col_fecha'] != 'Fecha':
+                    df_bloque = df_bloque.rename(columns={config['col_fecha']: 'Fecha'})
+                for col in df_bloque.columns:
+                    try:
+                        df_bloque[col] = pd.to_numeric(df_bloque[col])
+                    except (ValueError, TypeError):
+                        pass
 
-    df = pd.concat(resultados, ignore_index=True)
+                if os.path.exists(archivo):
+                    df_prev = pd.read_parquet(archivo)
+                    df_bloque = pd.concat([df_prev, df_bloque], ignore_index=True)
 
-    if config['tiene_versiones']:
-        df = mejor_version(df, config['col_fecha'])
+                df_bloque.sort_values('Fecha').reset_index(drop=True).to_parquet(archivo, index=False)
+                print(f"  Bloque {i}/{len(bloques)} guardado")
+            else:
+                print(f"  Bloque {i}/{len(bloques)} vacío o con error")
 
-    # Estandarizar nombre de columna fecha
-    if config['col_fecha'] != 'Fecha':
-        df = df.rename(columns={config['col_fecha']: 'Fecha'})
-
-    df = df.sort_values('Fecha').reset_index(drop=True)
-
-    os.makedirs(os.path.dirname(config['archivo']), exist_ok=True)
-    df.to_parquet(config['archivo'], index=False)
-
-    print(f"  {len(df)} registros guardados en {config['archivo']}")
-    return df
+    df_final = pd.read_parquet(archivo)
+    print(f"\nTotal registros: {len(df_final)}")
+    print(f"Rango: {df_final['Fecha'].min()} — {df_final['Fecha'].max()}")
 
 
 if __name__ == '__main__':
