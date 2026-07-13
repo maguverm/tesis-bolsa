@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import seaborn as sns
 from pathlib import Path
 from statsmodels.tsa.seasonal import seasonal_decompose
@@ -14,6 +15,7 @@ BASE = Path(__file__).resolve().parent / 'data' / 'processed'
 def cargar_datos():
     df = pd.read_parquet(BASE / 'dataset_consolidado.parquet')
     df.index = pd.to_datetime(df.index)
+    df.index.name = 'Fecha'
     return df
 
 df_full = cargar_datos()
@@ -33,6 +35,11 @@ VARIABLES = {
     'ONI': 'Índice ONI',
     'TRM': 'TRM ($/USD)'
 }
+
+def formato_eje_x(ax):
+    ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=[1, 4, 7, 10]))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
+    ax.tick_params(axis='x', rotation=90)
 
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 st.sidebar.title("Filtros")
@@ -66,7 +73,8 @@ for label, (fecha, color) in eventos.items():
         ax.text(f, df['precio_bolsa'].max() * 0.95, label, fontsize=8, color=color, ha='center')
 
 ax.set_ylabel('$/kWh')
-ax.tick_params(axis='x', rotation=90)
+ax.set_xlabel('')
+formato_eje_x(ax)
 sns.despine()
 plt.tight_layout()
 st.pyplot(fig)
@@ -102,7 +110,8 @@ if vars_seleccionadas:
             serie = (serie - serie.mean()) / serie.std()
         ax.plot(df.index, serie, linewidth=0.8, label=VARIABLES[var])
     ax.set_ylabel('Z-score' if estandarizar else 'Valor')
-    ax.tick_params(axis='x', rotation=90)
+    ax.set_xlabel('')
+    formato_eje_x(ax)
     ax.legend(fontsize=8)
     sns.despine()
     plt.tight_layout()
@@ -195,8 +204,8 @@ if len(df) >= 730:
         ['Serie original', 'Tendencia', 'Estacionalidad', 'Residuos']):
         ax.plot(serie.index, serie, color='darkblue', linewidth=0.7)
         ax.set_title(titulo)
-        ax.tick_params(axis='x', rotation=90)
         ax.set_xlabel('')
+        formato_eje_x(ax)
         sns.despine(ax=ax)
     plt.tight_layout()
     st.pyplot(fig)
@@ -216,7 +225,8 @@ ax2.axhline(-0.5, color='steelblue', linestyle='--', alpha=0.4, linewidth=0.8)
 ax1.set_ylabel('$/kWh')
 ax2.set_ylabel('Índice ONI', color='red')
 ax2.tick_params(axis='y', colors='red')
-ax1.tick_params(axis='x', rotation=90)
+formato_eje_x(ax1)
+ax1.set_xlabel('')
 lines1, labels1 = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
 ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left', fontsize=8)
