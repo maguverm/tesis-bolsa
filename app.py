@@ -237,3 +237,56 @@ sns.despine()
 plt.tight_layout()
 st.pyplot(fig)
 plt.close()
+
+# ── Sección 8: Modelos Baseline ───────────────────────────────────────────────
+st.header("8. Modelos Baseline")
+
+BASE_PRED = Path(__file__).resolve().parent / 'data' / 'processed'
+
+try:
+    pred_df = pd.read_parquet(BASE_PRED / 'predicciones_baseline.parquet')
+    metricas_df = pd.read_parquet(BASE_PRED / 'metricas_baseline.parquet')
+    pred_df.index = pd.to_datetime(pred_df.index)
+
+    # Tabla de métricas
+    st.subheader("Métricas comparativas")
+    st.dataframe(metricas_df, use_container_width=True)
+
+    # Selector de modelo
+    modelos = {
+        'sarima_base': 'SARIMA(1,0,1)(1,0,1,7)',
+        'sarima_optimo': 'SARIMA(2,0,2)(1,0,1,7)',
+        'sarimax': 'SARIMAX(2,0,2)(1,0,1,7) con covariables'
+    }
+
+    modelo_sel = st.selectbox(
+        "Selecciona modelo:",
+        options=list(modelos.keys()),
+        format_func=lambda x: modelos[x],
+        key='modelo_baseline'
+    )
+
+    # Gráfica train/test
+    fig, ax = plt.subplots(figsize=(14, 5))
+    
+    # Últimos 180 días del train
+    df_train = df_full[df_full.index < '2025-07-13']
+    ax.plot(df_train.index[-180:], df_train['precio_bolsa'][-180:],
+            color='darkblue', linewidth=0.8, label='Train (últimos 6 meses)')
+    ax.plot(pred_df.index, pred_df['real'],
+            color='darkblue', linewidth=0.8, linestyle='--', label='Real')
+    ax.plot(pred_df.index, pred_df[modelo_sel],
+            color='red', linewidth=0.8, label=modelos[modelo_sel])
+
+    ax.set_ylabel('$/kWh')
+    ax.set_xlabel('')
+    formato_eje_x(ax)
+    ax.legend(fontsize=8)
+    ax.set_title(f'Predicción vs Real — {modelos[modelo_sel]}')
+    sns.despine()
+    plt.tight_layout()
+    st.pyplot(fig)
+    plt.close()
+
+except FileNotFoundError:
+    st.warning("No se encontraron resultados de modelos. Ejecuta primero el notebook 01_sarimax.ipynb.")
