@@ -1,0 +1,50 @@
+{
+  "1": {
+    "ventana": 60,
+    "hidden_size": 64,
+    "num_layers": 1,
+    "dropout": 0.5,
+    "nonlinearity": "tanh",
+    "dense_size": 128,
+    "batch_size": 16,
+    "lr": 0.0001,
+    "optimizador": "adam",
+    "horizonte": 1,
+    "val_mse": 7.201700096225573e-05,
+    "best_epoch_search": 273,
+    "best_epoch_final": 221,
+    "val_mse_final": 7.774429007743796e-05
+  },
+  "7": {
+    "ventana": 60,
+    "hidden_size": 32,
+    "num_layers": 1,
+    "dropout": 0.5,
+    "nonlinearity": "relu",
+    "dense_size": 128,
+    "batch_size": 32,
+    "lr": 0.001,
+    "optimizador": "adam",
+    "horizonte": 7,
+    "val_mse": 0.00010582396988661921,
+    "best_epoch_search": 83,
+    "best_epoch_final": 13,
+    "val_mse_final": 0.00011249593471740784
+  },
+  "30": {
+    "ventana": 30,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "dropout": 0.5,
+    "nonlinearity": "relu",
+    "dense_size": 128,
+    "batch_size": 64,
+    "lr": 0.0005,
+    "optimizador": "rmsprop",
+    "horizonte": 30,
+    "val_mse": 9.446500754747234e-05,
+    "best_epoch_search": 92,
+    "best_epoch_final": 69,
+    "val_mse_final": 8.976199750691815e-05
+  }
+}
