@@ -1,0 +1,106 @@
+Modelo,Horizonte,N,n_origen
+GRU Bayesiana,1,351,351
+GRU Bayesiana,2,351,351
+GRU Bayesiana,3,351,351
+GRU Bayesiana,4,351,351
+GRU Bayesiana,5,351,351
+GRU Bayesiana,6,351,351
+GRU Bayesiana,7,351,351
+GRU Bayesiana,8,351,351
+GRU Bayesiana,9,351,351
+GRU Bayesiana,10,351,351
+GRU Bayesiana,11,351,351
+GRU Bayesiana,12,351,351
+GRU Bayesiana,13,351,351
+GRU Bayesiana,14,351,351
+GRU Bayesiana,15,351,351
+LSTM cuantílica,1,351,351
+LSTM cuantílica,2,351,351
+LSTM cuantílica,3,351,351
+LSTM cuantílica,4,351,351
+LSTM cuantílica,5,351,351
+LSTM cuantílica,6,351,351
+LSTM cuantílica,7,351,351
+LSTM cuantílica,8,351,351
+LSTM cuantílica,9,351,351
+LSTM cuantílica,10,351,351
+LSTM cuantílica,11,351,351
+LSTM cuantílica,12,351,351
+LSTM cuantílica,13,351,351
+LSTM cuantílica,14,351,351
+LSTM cuantílica,15,351,351
+Persistencia,1,351,351
+Persistencia,2,351,351
+Persistencia,3,351,351
+Persistencia,4,351,351
+Persistencia,5,351,351
+Persistencia,6,351,351
+Persistencia,7,351,351
+Persistencia,8,351,351
+Persistencia,9,351,351
+Persistencia,10,351,351
+Persistencia,11,351,351
+Persistencia,12,351,351
+Persistencia,13,351,351
+Persistencia,14,351,351
+Persistencia,15,351,351
+Persistencia semanal,1,351,351
+Persistencia semanal,2,351,351
+Persistencia semanal,3,351,351
+Persistencia semanal,4,351,351
+Persistencia semanal,5,351,351
+Persistencia semanal,6,351,351
+Persistencia semanal,7,351,351
+Persistencia semanal,8,351,351
+Persistencia semanal,9,351,351
+Persistencia semanal,10,351,351
+Persistencia semanal,11,351,351
+Persistencia semanal,12,351,351
+Persistencia semanal,13,351,351
+Persistencia semanal,14,351,351
+Persistencia semanal,15,351,351
+SARIMAX,1,351,351
+SARIMAX,2,351,351
+SARIMAX,3,351,351
+SARIMAX,4,351,351
+SARIMAX,5,351,351
+SARIMAX,6,351,351
+SARIMAX,7,351,351
+SARIMAX,8,351,351
+SARIMAX,9,351,351
+SARIMAX,10,351,351
+SARIMAX,11,351,351
+SARIMAX,12,351,351
+SARIMAX,13,351,351
+SARIMAX,14,351,351
+SARIMAX,15,351,351
+SARIMAX sin semana,1,351,351
+SARIMAX sin semana,2,351,351
+SARIMAX sin semana,3,351,351
+SARIMAX sin semana,4,351,351
+SARIMAX sin semana,5,351,351
+SARIMAX sin semana,6,351,351
+SARIMAX sin semana,7,351,351
+SARIMAX sin semana,8,351,351
+SARIMAX sin semana,9,351,351
+SARIMAX sin semana,10,351,351
+SARIMAX sin semana,11,351,351
+SARIMAX sin semana,12,351,351
+SARIMAX sin semana,13,351,351
+SARIMAX sin semana,14,351,351
+SARIMAX sin semana,15,351,351
+TFT + covariables,1,351,351
+TFT + covariables,2,351,351
+TFT + covariables,3,351,351
+TFT + covariables,4,351,351
+TFT + covariables,5,351,351
+TFT + covariables,6,351,351
+TFT + covariables,7,351,351
+TFT + covariables,8,351,351
+TFT + covariables,9,351,351
+TFT + covariables,10,351,351
+TFT + covariables,11,351,351
+TFT + covariables,12,351,351
+TFT + covariables,13,351,351
+TFT + covariables,14,351,351
+TFT + covariables,15,351,351

@@ -1,0 +1,3 @@
+modelo,metodo,convergencia,AIC
+SARIMAX,powell,True,50601.08299298702
+SARIMAX sin semana,powell,True,50682.296633597965

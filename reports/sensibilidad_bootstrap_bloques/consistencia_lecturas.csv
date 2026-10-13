@@ -1,0 +1,76 @@
+Horizonte,Modelo,Bloque_7,Bloque_14,Bloque_30,Robustez
+1,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+1,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+1,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+1,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+1,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+2,GRU Bayesiana,mejora,mejora,mejora,estable
+2,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+2,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+2,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+2,TFT + covariables,empeora,empeora,empeora,estable
+3,GRU Bayesiana,mejora,mejora,mejora,estable
+3,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+3,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+3,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+3,TFT + covariables,mejora,mejora,mejora,estable
+4,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+4,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+4,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+4,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+4,TFT + covariables,mejora,mejora,mejora,estable
+5,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+5,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+5,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+5,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+5,TFT + covariables,mejora,mejora,mejora,estable
+6,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+6,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+6,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+6,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+6,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+7,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+7,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+7,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+7,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+7,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+8,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+8,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+8,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+8,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+8,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+9,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+9,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+9,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+9,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+9,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+10,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+10,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+10,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+10,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+10,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+11,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+11,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+11,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+11,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+11,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+12,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+12,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+12,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+12,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+12,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+13,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+13,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+13,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+13,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+13,TFT + covariables,no concluyente,no concluyente,no concluyente,estable
+14,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+14,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+14,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+14,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+14,TFT + covariables,empeora,empeora,empeora,estable
+15,GRU Bayesiana,no concluyente,no concluyente,no concluyente,estable
+15,LSTM cuantílica,no concluyente,no concluyente,no concluyente,estable
+15,SARIMAX,no concluyente,no concluyente,no concluyente,estable
+15,SARIMAX sin semana,no concluyente,no concluyente,no concluyente,estable
+15,TFT + covariables,empeora,empeora,empeora,estable
